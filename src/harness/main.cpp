@@ -232,7 +232,7 @@ void find_trace_files_or_die(const std::string &dir,
 
 int main() {
     const auto profileName = std::string("huffman_coding");
-    const auto traceDir = std::string("../../traces") + "/" + profileName;
+    const auto traceDir = std::string("../traces") + "/" + profileName;
 
     std::vector<std::string> traceFiles;
     find_trace_files_or_die(traceDir, profileName, traceFiles);
