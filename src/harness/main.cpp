@@ -231,7 +231,7 @@ void find_trace_files_or_die(const std::string &dir,
 }
 
 int main() {
-    const auto profileName = std::string("huffman_coding");
+    const auto profileName = std::string("batch_then_drain"); // **TEMPORARY CHANGE** to see if the harness can create my .csv files for batch_then_drain
     const auto traceDir = std::string("../traces") + "/" + profileName;
 
     std::vector<std::string> traceFiles;
