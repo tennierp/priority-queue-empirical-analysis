@@ -49,7 +49,7 @@ RunResult run_trace_ops(Impl &pq,
     // One untimed run
 
     pq.clear();
-    std::cout << "Starting the throw-away run for N = " << runResult.run_meta_data.N << std::endl;
+    std::cerr << "Starting the throw-away run for N = " << runResult.run_meta_data.N << std::endl;
     for (const auto &op: ops) {
         switch (op.tag) {
             case OpCode::Insert:
@@ -75,7 +75,7 @@ RunResult run_trace_ops(Impl &pq,
 
     for (int i = 0; i < numTrials; ++i) {
         pq.clear();
-        std::cout << "Run " << i << " for N = " << runResult.run_meta_data.N << std::endl;
+        std::cerr << "Run " << i << " for N = " << runResult.run_meta_data.N << std::endl;
         auto t0 = clock::now();
         for (const auto &op: ops) {
             switch (op.tag) {
@@ -232,7 +232,7 @@ void find_trace_files_or_die(const std::string &dir,
 
 int main() {
     const auto profileName = std::string("batch_then_drain"); // **TEMPORARY CHANGE** to see if the harness can create my .csv files for batch_then_drain
-    const auto traceDir = std::string("../traces") + "/" + profileName;
+    const auto traceDir = std::string("traces") + "/" + profileName;
 
     std::vector<std::string> traceFiles;
     find_trace_files_or_die(traceDir, profileName, traceFiles);

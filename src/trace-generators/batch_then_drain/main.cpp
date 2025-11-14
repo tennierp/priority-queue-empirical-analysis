@@ -6,7 +6,8 @@
 #include <vector>
 #include "../../../utils/TraceConfig.hpp"
 
-void generateTrace(const unsigned seed, const std::size_t n, TraceConfig &config, std::uniform_int_distribution<int> &dist, std::mt19937& gen) {
+void generateTrace(const unsigned seed, const std::size_t n, TraceConfig &config,
+                   std::uniform_int_distribution<int> &dist, std::mt19937& gen) {
 
     auto outputFileName = config.makeTraceFileName(seed, n);
     std::cout << "Generating file: " << outputFileName << std::endl;
@@ -22,6 +23,7 @@ void generateTrace(const unsigned seed, const std::size_t n, TraceConfig &config
     unsigned id = 0;
     int spaceBeforeNumber = 10;
 
+    // Generate N inserts
     for (unsigned i = 0; i < n; ++i) {
         int key = dist(gen);
         out << "I "
@@ -31,8 +33,10 @@ void generateTrace(const unsigned seed, const std::size_t n, TraceConfig &config
         id++;
     }
 
+    // Generate N extractMins (drain phase)
     for (unsigned i = 0; i < n; ++i) {
-        out << "E\n";
+        out << "F\n";
+        out << "D\n";
     }
 
     out.close();
@@ -46,7 +50,7 @@ int main() {
 
         for (auto n : config.Ns) {
             const unsigned key_min = 1;
-            const unsigned key_max = n * n; // N^2
+            const unsigned key_max = 1048576;  // This is 2^20 like suggested in the Part 1.
             std::uniform_int_distribution<int> dist(key_min, key_max);
 
             generateTrace(seed, n, config, dist, rng);

@@ -22,10 +22,9 @@ struct TraceConfig {
 
     }
 
-
     std::vector<unsigned> seeds = {23};  // only one seed to get started.
     std::vector<unsigned> Ns;
-    std::string traceDirectory = "../traces"; // awkward!
+    std::string traceDirectory = "traces";
     std::string implementationName;
     std::string profileName;
 
