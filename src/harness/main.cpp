@@ -21,8 +21,6 @@
 #include "../implementations/LinearBaseLine/LinearBaseLine.hpp"
 #include "../implementations/Oracle/QuadraticOracle.hpp"
 
-
-
 // Assumes:
 //  - struct Op { OpCode tag; int key; int id; }
 //  - enum class OpCode { Insert, FindMin, DeleteMin, ExtractMin };
@@ -230,8 +228,9 @@ void find_trace_files_or_die(const std::string &dir,
     std::sort(out_files.begin(), out_files.end()); // stable order for reproducibility
 }
 
-int main() {
-    const auto profileName = std::string("batch_then_drain"); // **TEMPORARY CHANGE** to see if the harness can create my .csv files for batch_then_drain
+int main(int argc, char* argv[]) {
+
+    const auto profileName = std::string(argv[1]);
     const auto traceDir = std::string("traces") + "/" + profileName;
 
     std::vector<std::string> traceFiles;
