@@ -229,6 +229,10 @@ void find_trace_files_or_die(const std::string &dir,
 }
 
 int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <profile_name>\n";
+        return 1;
+    }
 
     const auto profileName = std::string(argv[1]);
     const auto traceDir = std::string("traces") + "/" + profileName;
