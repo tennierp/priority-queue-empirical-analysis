@@ -26,6 +26,7 @@ four times at the largest N values given. The linear baseline that performs O(1)
 showed the minimum overhead of N operations, and the quadratic oracle showed us the O(N^2)
 growth.
 
+![](charts/batch_then_drain_plot.png)
 
 ## Takeaway: 
 The binary heap consistently outperformed the binomial queue with all the tested sizes from these traces, showing that constant factors really do impact the real world
