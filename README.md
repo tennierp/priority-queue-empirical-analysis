@@ -1,12 +1,7 @@
-## Project 5 - Empirical Analysis of Batch-then-Drain Profile
-
-## Student Information
-Parker Tennier  
-ID: 008768156  
-https://github.com/tennierp/priority-queue-empirical-analysis.git
+## Empirical Analysis of Batch-then-Drain Profile
 
 ## Collaboration & Sources
-Dr. Ali A. Kooshesh provided all of the benchmark tools necessary to run this program as well as the data structure implementations: BinaryHeapInVector, BinomialQueues, LinearBaseline, Oracle. The project was built from his original Empirical Analysis of Huffman Profiles project. I also used a pdf-to-markdown converter to help me better organize my pdf report into a markdown file. 
+BinaryHeapInVector, BinomialQueues, LinearBaseline, Oracle. The project was built from Empirical Analysis of Huffman Profiles project. I also used a pdf-to-markdown converter to help me better organize my pdf report into a markdown file. 
 
 ## Implementation Details
 ### Trace Generator
